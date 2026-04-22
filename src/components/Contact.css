@@ -1,0 +1,33 @@
+.contact {
+  border-top: 1px solid rgba(175, 128, 78, 0.2);
+}
+
+.contact h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact .container {
+  padding: 1.2rem 0.2rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.contact-list li {
+  margin-bottom: 0;
+  color: #4a372d;
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(194, 144, 88, 0.2);
+  border-radius: 999px;
+  padding: 0.55rem 0.75rem;
+}
+
+.contact-list strong {
+  color: #7d4c2a;
+}

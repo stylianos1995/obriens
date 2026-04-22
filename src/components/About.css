@@ -1,0 +1,88 @@
+.about {
+  border-top: 1px solid rgba(175, 128, 78, 0.2);
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.about .container {
+  padding: 1.3rem 0.2rem;
+}
+
+.about-intro {
+  color: #49382e;
+  max-width: 760px;
+}
+
+.about-showcase {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.about-feature {
+  display: grid;
+  grid-template-columns: minmax(260px, 42%) 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.about-feature.reverse {
+  grid-template-columns: 1fr minmax(260px, 42%);
+}
+
+.about-image {
+  border-radius: 24px;
+  min-height: 230px;
+  border: 1px dashed rgba(197, 148, 93, 0.55);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  color: #7d4e2b;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.about-image-cocktails {
+  background: linear-gradient(130deg, rgba(255, 214, 153, 0.42), rgba(255, 240, 211, 0.78));
+}
+
+.about-image-draft {
+  background: linear-gradient(130deg, rgba(255, 228, 171, 0.45), rgba(250, 237, 207, 0.78));
+}
+
+.about-image-experience {
+  background: linear-gradient(130deg, rgba(255, 209, 160, 0.45), rgba(249, 228, 200, 0.8));
+}
+
+.about-copy {
+  align-self: center;
+  padding: 0.2rem 0.4rem;
+}
+
+.about-copy h3 {
+  margin: 0 0 0.45rem;
+  color: #6f4324;
+  font-size: 1.35rem;
+}
+
+.about-copy p {
+  margin: 0;
+  color: #4b392f;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 860px) {
+  .about-feature,
+  .about-feature.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 210px;
+  }
+}

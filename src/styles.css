@@ -1,0 +1,52 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  color: #2f241f;
+  background-color: #f6f1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: linear-gradient(180deg, #fffaf2 0%, #f6efe3 48%, #f2e9dc 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  position: relative;
+  isolation: isolate;
+}
+
+.app > header,
+.app > main,
+.app > footer {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 3rem 0;
+  }
+}

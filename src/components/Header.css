@@ -1,0 +1,92 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 251, 244, 0.92);
+  border-bottom: 1px solid rgba(175, 128, 78, 0.25);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.header-walker {
+  position: absolute;
+  bottom: 2px;
+  left: -64px;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.header:hover .header-walker {
+  animation: walkAcrossHeader 3.6s linear forwards, walkBounce 0.34s ease-in-out infinite;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #8a4d23;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-list a {
+  color: #4b3528;
+  font-weight: 500;
+  opacity: 0.95;
+  padding: 0.35rem 0.5rem;
+  border-radius: 7px;
+  transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #b45d2c;
+  background-color: rgba(255, 228, 180, 0.45);
+  opacity: 1;
+}
+
+@keyframes walkAcrossHeader {
+  from {
+    left: -64px;
+  }
+  to {
+    left: calc(100% - 12px);
+  }
+}
+
+@keyframes walkBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}

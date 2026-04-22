@@ -1,0 +1,49 @@
+.decorative-sprites {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sprite {
+  position: absolute;
+  width: clamp(84px, 10.8vw, 180px);
+  opacity: 0.55;
+  filter: drop-shadow(0 8px 20px rgba(76, 44, 22, 0.18));
+}
+
+.sprite-one {
+  top: 9%;
+  left: 2%;
+  transform: rotate(-8deg);
+}
+
+.sprite-two {
+  top: 28%;
+  right: 2%;
+  transform: rotate(7deg);
+}
+
+.sprite-three {
+  top: 61%;
+  left: 3%;
+  transform: rotate(-5deg);
+}
+
+.sprite-four {
+  bottom: 9%;
+  right: 4%;
+  transform: rotate(6deg);
+}
+
+@media (max-width: 900px) {
+  .sprite {
+    opacity: 0.42;
+  }
+
+  .sprite-three,
+  .sprite-four {
+    display: none;
+  }
+}
