@@ -5,7 +5,6 @@ import Hero from "./components/Hero";
 import MenuGallery from "./components/MenuGallery";
 import Events from "./components/Events";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./styles.css";
 
@@ -19,7 +18,6 @@ function App() {
         <MenuGallery />
         <Events />
         <About />
-        <Contact />
       </main>
       <Footer />
     </div>
