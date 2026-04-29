@@ -21,9 +21,6 @@ function Hero() {
           <span>8 Rotating Draft Lines</span>
           <span>Happy Hour Daily</span>
         </div>
-        <a href="#contact" className="btn-primary">
-          Reserve a Table
-        </a>
       </div>
     </section>
   );

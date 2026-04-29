@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import logoImage from "../assets/logo.webp";
+import logoImage from "../assets/logo.png";
 import walkerImage from "../assets/ob1.png";
 import menuImageOne from "../assets/menu1.webp";
 import menuImageTwo from "../assets/menu2.webp";
@@ -79,7 +79,7 @@ function Header() {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#events">Events</a>
+              <a href="#gallery">Gallery</a>
             </li>
             <li>
               <a href="#contact">Contact</a>

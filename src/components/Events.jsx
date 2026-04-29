@@ -1,86 +1,78 @@
 import React, { useEffect, useState } from "react";
 import "./Events.css";
+import galleryImageOne from "../assets/hero1.png";
+import galleryImageTwo from "../assets/ob2.png";
+import galleryImageThree from "../assets/ob3.png";
+import galleryImageFour from "../assets/ob4.png";
 
-const weeklyEvents = [
+const galleryPhotos = [
   {
-    day: "Monday",
-    title: "Game Night",
-    time: "20:00 - Late",
-    description: "Board games, card battles, and social team challenges.",
-    image: "",
+    key: "photo-1",
+    title: "Main floor atmosphere",
+    description: "Warm lights, packed tables, and classic O'briens vibes.",
+    image: galleryImageOne,
   },
   {
-    day: "Tuesday",
-    title: "Movie Night",
-    time: "21:00 - 00:00",
-    description: "Big screen classics, cult films, and themed drink specials.",
-    image: "",
+    key: "photo-2",
+    title: "Bar counter moments",
+    description: "Signature pours and favorite drinks served all night.",
+    image: galleryImageTwo,
   },
   {
-    day: "Wednesday",
-    title: "Erasmus Night",
-    time: "22:00 - Late",
-    description: "International crowd, welcome shots, and playlist takeovers.",
-    image: "",
+    key: "photo-3",
+    title: "Friends and music",
+    description: "Shared laughs, live beats, and unforgettable snapshots.",
+    image: galleryImageThree,
   },
   {
-    day: "Thursday",
-    title: "Beer Pong Night",
-    time: "21:30 - Late",
-    description: "Tournament brackets, draft specials, and team prizes.",
-    image: "",
-  },
-  {
-    day: "Friday",
-    title: "Live DJ Party",
-    time: "23:00 - 03:00",
-    description: "Cocktail signatures, dance floor energy, and late-night vibes.",
-    image: "",
+    key: "photo-4",
+    title: "Night energy",
+    description: "Late-night crowd, dancing, and pure party spirit.",
+    image: galleryImageFour,
   },
 ];
 
 function Events() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const totalEvents = weeklyEvents.length;
+  const totalPhotos = galleryPhotos.length;
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % totalEvents);
+      setActiveIndex((current) => (current + 1) % totalPhotos);
     }, 7000);
 
     return () => window.clearInterval(timer);
-  }, [totalEvents]);
+  }, [totalPhotos]);
 
   function goNext() {
-    setActiveIndex((current) => (current + 1) % totalEvents);
+    setActiveIndex((current) => (current + 1) % totalPhotos);
   }
 
   function goPrev() {
-    setActiveIndex((current) => (current - 1 + totalEvents) % totalEvents);
+    setActiveIndex((current) => (current - 1 + totalPhotos) % totalPhotos);
   }
 
   return (
-    <section className="events section" id="events">
+    <section className="events section" id="gallery">
       <div className="container">
-        <h2>Our Events</h2>
+        <h2>Our Gallery</h2>
         <div className="events-carousel">
           <div className="events-track-wrap">
-            {weeklyEvents.map((eventItem, index) => (
+            {galleryPhotos.map((photoItem, index) => (
               <article
                 className={`event-slide ${index === activeIndex ? "active" : ""}`}
-                key={eventItem.day}
+                key={photoItem.key}
                 style={{
-                  backgroundImage: eventItem.image
-                    ? `linear-gradient(120deg, rgba(18, 12, 8, 0.35), rgba(18, 12, 8, 0.55)), url(${eventItem.image})`
+                  backgroundImage: photoItem.image
+                    ? `linear-gradient(120deg, rgba(18, 12, 8, 0.35), rgba(18, 12, 8, 0.55)), url(${photoItem.image})`
                     : "linear-gradient(125deg, #a85a2f 0%, #8f3d33 52%, #4f315f 100%)",
                 }}
                 aria-hidden={index !== activeIndex}
               >
                 <div className="event-content">
-                  <p className="event-day">{eventItem.day}</p>
-                  <h3>{eventItem.title}</h3>
-                  <p className="event-time">{eventItem.time}</p>
-                  <p className="event-description">{eventItem.description}</p>
+                  <p className="event-day">O&apos;briens moments</p>
+                  <h3>{photoItem.title}</h3>
+                  <p className="event-description">{photoItem.description}</p>
                 </div>
               </article>
             ))}
@@ -89,7 +81,7 @@ function Events() {
               type="button"
               className="carousel-control left"
               onClick={goPrev}
-              aria-label="Previous event"
+              aria-label="Previous photo"
             >
               &#8592;
             </button>
@@ -98,21 +90,21 @@ function Events() {
               type="button"
               className="carousel-control right"
               onClick={goNext}
-              aria-label="Next event"
+              aria-label="Next photo"
             >
               &#8594;
             </button>
           </div>
         </div>
 
-        <div className="carousel-dots" aria-label="Event slide indicators">
-          {weeklyEvents.map((eventItem, index) => (
+        <div className="carousel-dots" aria-label="Gallery slide indicators">
+          {galleryPhotos.map((photoItem, index) => (
             <button
-              key={eventItem.day}
+              key={photoItem.key}
               type="button"
               className={`carousel-dot ${index === activeIndex ? "active" : ""}`}
               onClick={() => setActiveIndex(index)}
-              aria-label={`View ${eventItem.title}`}
+              aria-label={`View ${photoItem.title}`}
             />
           ))}
         </div>

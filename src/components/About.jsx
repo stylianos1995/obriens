@@ -1,31 +1,39 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./About.css";
+import aboutImageOne from "../assets/hero1.png";
+import aboutImageTwo from "../assets/ob1.png";
+import aboutImageThree from "../assets/ob2.png";
+import aboutImageFour from "../assets/ob3.png";
+import aboutImageFive from "../assets/ob4.png";
 
 const aboutShowcase = [
   {
     title: "Signature Cocktails",
     description:
       "A curated collection of house signatures and modern classics, handcrafted with premium spirits, fresh citrus, and balanced flavor profiles.",
-    imageLabel: "Add signature cocktail photos",
     accent: "cocktails",
   },
   {
     title: "Draft Selection",
     description:
       "Rotating draft lines with crisp lagers, hoppy IPAs, and seasonal taps. We keep the pours fresh and the list evolving every week.",
-    imageLabel: "Add draft beer selection photos",
     accent: "draft",
   },
   {
     title: "Bar Experience",
     description:
       "Warm interior lighting, social energy, and a full-room atmosphere that turns every night into an event worth remembering.",
-    imageLabel: "Add full-bar atmosphere photos",
     accent: "experience",
   },
 ];
 
 function About() {
+  const randomPhotos = useMemo(() => {
+    const imagePool = [aboutImageOne, aboutImageTwo, aboutImageThree, aboutImageFour, aboutImageFive];
+    const shuffled = [...imagePool].sort(() => Math.random() - 0.5);
+    return aboutShowcase.map((_, index) => shuffled[index % shuffled.length]);
+  }, []);
+
   return (
     <section className="about section" id="about">
       <div className="container">
@@ -42,7 +50,7 @@ function About() {
               key={item.title}
             >
               <div className={`about-image about-image-${item.accent}`}>
-                <span>{item.imageLabel}</span>
+                <img src={randomPhotos[index]} alt={`${item.title} at O'briens`} />
               </div>
               <div className="about-copy">
                 <h3>{item.title}</h3>

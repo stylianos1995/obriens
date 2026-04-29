@@ -74,6 +74,24 @@
   box-shadow: 0 12px 24px rgba(47, 36, 31, 0.12);
 }
 
+.footer__rating {
+  text-align: center;
+  margin: 0.25rem 0 0.6rem;
+}
+
+.footer__rating-title {
+  margin: 0;
+  color: #5b3d2b;
+  font-weight: 700;
+}
+
+.footer__stars {
+  margin: 0.15rem 0 0;
+  color: #c78634;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
 .footer__map-wrap iframe {
   display: block;
   width: 100%;

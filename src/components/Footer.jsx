@@ -3,7 +3,9 @@ import "./Footer.css";
 
 function Footer() {
   const address = "Sint Annalaan 7, Maastricht, Netherlands, 6214AA";
-  const mapQuery = encodeURIComponent(address);
+  const googleMapsUrl = "https://maps.app.goo.gl/zfnefJ2FE36X7YHm6";
+  const mapEmbedUrl =
+    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23589.65964279369!2d5.676566!3d50.849142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0e966efa97923%3A0xbb6da247f9a6a1aa!2zT-KAmUJyaWVu4oCZcw!5e1!3m2!1sel!2sus!4v1777465248232!5m2!1sel!2sus";
 
   return (
     <footer className="footer" id="contact">
@@ -16,7 +18,7 @@ function Footer() {
           </p>
           <p>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+              href={googleMapsUrl}
               target="_blank"
               rel="noreferrer"
             >
@@ -48,9 +50,15 @@ function Footer() {
         </div>
 
         <div className="footer__map-wrap">
+          <div className="footer__rating" aria-label="Rate us five stars">
+            <p className="footer__rating-title">Rate us</p>
+            <p className="footer__stars" aria-hidden="true">
+              ★★★★★
+            </p>
+          </div>
           <iframe
             title="O'briens Maastricht location map"
-            src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+            src={mapEmbedUrl}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
